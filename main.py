@@ -11,11 +11,14 @@ class User:
         self.access_secret = access_secret
         self.bearer = bearer
 
-api_key = "t8vd3auufT4vxeLyhauekhoiK"
-api_key_secret = "PMS9r3jTqPwvZfxwqe44cBL5WEVc5BbQrkpQCM6trU142wvArv"
-api_access_token = "1596713653679656960-poulF11ViwF1ao15pi63rp4KvTc9mJ"
-api_access_secret = "CzfFNz6vUpZ9tzdnK1ptUQbv8gObvlXX64YXvaXuYPn4O"
-bearer = "AAAAAAAAAAAAAAAAAAAAAJUejwEAAAAAPP%2B3ZdkXPD8qgTntiWxdRJqu3ZA%3DqA4oBuRzI398wsIkHtsJZR8Mpn39qI2IDP0RC1sfcJDk8KJ1Kh"
+# Plug in your api credentials v
+api_key = ""
+api_key_secret = ""
+api_access_token = ""
+api_access_secret = ""
+bearer = ""
+
+id = "" # plug in twitter user id
 
 user = User(customer_key=api_key,
             customer_secret=api_key_secret,
@@ -45,7 +48,7 @@ facts = data
 
 while True:
     factoftheday = random.choice(facts)
-    if factoftheday not in list(client.get_users_tweets(id=1596713653679656960, since_id=1597318138693050369)):
+    if factoftheday not in list(client.get_users_tweets(id=id, since_id=1597318138693050369)):
         break
 
 try:
@@ -53,23 +56,6 @@ try:
 except:
     pass
 
-
-
-
-
-
-
-
-
-
-
-
-# facts = pd.read_csv('Catfacts.csv')
-# data = [i.capitalize() for i in facts["catfacts"] ]
-#
-# tweetoftheday = random.choice(data)
-#
-# print(tweetoftheday)
 
 
 
